@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 400px;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.email-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+.email_heading {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+}

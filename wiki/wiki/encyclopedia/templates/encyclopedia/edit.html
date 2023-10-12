@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit the page</title>
+</head>
+<body>
+    <h1>Edit {{title}}</h1>
+    <div class="container">
+        <form action="edit" method="post">
+            {% csrf_token %}
+            {% for text in form %}
+                <div>{{text}}</div>
+            {% endfor %}
+            <div>
+                <input type="submit" value="save">
+            </div>
+        </form>
+    </div>
+    <a href="{%url 'index' %}">Home</a>
+</body>
+</html>

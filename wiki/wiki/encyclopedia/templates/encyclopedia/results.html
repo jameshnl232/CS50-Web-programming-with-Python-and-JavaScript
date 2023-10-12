@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    results
+{% endblock %}
+
+
+{% block form %}
+<form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+</form>    
+{% endblock %}
+
+{% block body %}
+    <h1>Do you mean?</h1>
+    <ul>
+        {% for entry in entries %}
+            {% if data|upper in entry|upper %}
+                <li><a href="{wiki/{{entry}}}">{{entry}}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+{% endblock %}

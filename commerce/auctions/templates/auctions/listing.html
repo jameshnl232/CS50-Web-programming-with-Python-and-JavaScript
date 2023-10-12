@@ -1,0 +1,100 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}
+    {{listing.title}}
+{% endblock %}
+
+{% block body %}
+    <h2 class="test">Listing: {{listing.title}} </h2>
+    <div class="container">  
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{{ listing.image.url }}" alt="Auction listing image" class="img-fluid">
+            </div>
+        </div>                  
+    </div>
+    <p>{{ listing.description }}</p>
+    <h3>Current Bid: ${{ listing.current_bid|floatformat:2 }}</h3>
+    <p> 
+        {% if bid_count == None %}
+            0 bids so far.
+        {% else %}
+            {{ bid_count }} bid(s) so far. 
+        {% endif %}
+    </p>
+    {% if error %}
+        <p style="color: red;">
+            {{error}}
+        </p>
+    {% endif %}
+    {% if user.is_authenticated and not closed %}
+        <form action="{% url 'display_listing' listing.id %}" method="post">
+            {% csrf_token %}
+            <input type="number" step="0.01" placeholder="Bid" class="form-control" name="Bid" required="True">
+            <div class="container m-0 p-0">
+                <div class="row row justify-content-start">
+                    <div class="col-md-1 mt-2">
+                        <input class="btn btn-primary" type="submit" value="Place Bid">
+                    </div>
+                    <div class="col-md-auto mt-2">
+                        {% if user not in listing.liked.all %}
+                            <a class="btn btn-primary" href="{% url 'add_to_watchlist' listing.id %}">Add to watchlist</a>
+                        {% else %}
+                            <a class="btn btn-primary" href="{% url 'add_to_watchlist' listing.id %}">Remove from watchlist</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        {% if user == listing.seller %}
+            <div class="mt-2">
+                <a href="{% url 'close_listing' listing.id %}" class="btn btn-primary">Close listing</a>
+            </div>
+        {% endif %}
+
+    {% elif user.is_authenticated and closed %}
+            <p>This listing is closed.</p>
+            {% if user == winner %}
+                <p>You are the winner </p>
+            {% else %}
+                {% if winner == None %}
+                    <p>No one placed bid on this listing</p>
+                {% else %}
+                    <p>The winner is {{winner}}</p>
+                {% endif %}
+            {% endif %}
+    {% endif %}
+    
+    <h3>Details</h3>
+    <ul>
+        <li>Listed by: {{listing.seller}}</li>
+        <li>Category: {{listing.category}}</li>
+        <li>Posted on: {{listing.start_time}}</li>
+    </ul>
+
+    <h3>Comments:</h3>
+    <ul>
+        {% for comment in comments %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>{{comment.text}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p><b>{{comment.commenter}}</b></p>
+                        <p>{{comment.comment_time}}</p>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>No comments</p>
+        {% endfor %}
+    </ul>
+
+    <form method="POST" action="{% url 'display_listing' listing.id %}">
+        {% csrf_token %}
+        <input class="form-control" type="text" name="comment" placeholder="Comment...">
+        <input type="submit" value="Post" class="form-control">
+    </form>
+{% endblock %}
