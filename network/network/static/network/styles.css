@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+#new-post-content{
+    height: 15vh;
+}
+
+.new-post-form{
+    font-size: 20px;
+}
+
+.edit-post, .like-label{
+    color:dodgerblue;
+}
+
+.edit-post:hover, .like-label:hover{
+    cursor: pointer;
+}
+
+.edit-textarea{
+    width: 100%;
+}
+
+.liked-post{
+    font-weight: bold;
+}
