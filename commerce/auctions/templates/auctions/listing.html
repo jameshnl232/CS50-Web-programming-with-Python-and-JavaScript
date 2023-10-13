@@ -31,20 +31,18 @@
         <form action="{% url 'display_listing' listing.id %}" method="post">
             {% csrf_token %}
             <input type="number" step="0.01" placeholder="Bid" class="form-control" name="Bid" required="True">
-            <div class="container m-0 p-0">
-                <div class="row row justify-content-start">
-                    <div class="col-md-1 mt-2">
-                        <input class="btn btn-primary" type="submit" value="Place Bid">
-                    </div>
-                    <div class="col-md-auto mt-2">
+                <div class="row">
+                    <span class="ml-3 m-1">
+                        <input class=" btn btn-primary" type="submit" value="Place Bid">
+                    </span>
+                    <span class="m-1">
                         {% if user not in listing.liked.all %}
                             <a class="btn btn-primary" href="{% url 'add_to_watchlist' listing.id %}">Add to watchlist</a>
                         {% else %}
                             <a class="btn btn-primary" href="{% url 'add_to_watchlist' listing.id %}">Remove from watchlist</a>
                         {% endif %}
-                    </div>
+                    </span>
                 </div>
-            </div>
 
         </form>
         {% if user == listing.seller %}
