@@ -48,4 +48,6 @@ Projects from the course
 
 ***
 ## Wiki
+- A wiki-like website:
+  ![image](
 ***
