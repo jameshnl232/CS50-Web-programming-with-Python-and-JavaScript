@@ -11,14 +11,14 @@ Projects from the course
     + Handling requests and routing
     + Things user can do:
         + Register, Log in, Log out
-        + ![image](commerce/auctions/static/images/auth.PNG)
+         ![image](commerce/auctions/static/images/auth.PNG)
         + Create a listing
-        + ![image](commerce/auctions/static/images/createListing.PNG)
+         ![image](commerce/auctions/static/images/createListing.PNG)
         + Make a bid on a listing
         + Make comments on a listing
-        + ![image](commerce/auctions/static/images/comment.PNG)
+         ![image](commerce/auctions/static/images/comment.PNG)
         + Add/remove an item to watchlist
-        + ![image](commerce/auctions/static/images/Placebid.PNG)
+         ![image](commerce/auctions/static/images/Placebid.PNG)
         + Close a listing
 .....
 ## Mail
