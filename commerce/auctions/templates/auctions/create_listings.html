@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create listings</title>
     <style>
-        h1{
-            text-align: center;
+      h1 {
+        text-align: center;
+      }
+        .centered {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Create listings</h1>
-    <form action="{% url 'create_listing' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Create Auction Listing</button>
+    <form
+      class="centered"
+      action="{% url 'create_listing' %}"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Create Auction Listing</button>
     </form>
     <div>
-        <a href="{% url 'index' %}">Back</a>
+      <a href="{% url 'index' %}">Back</a>
     </div>
-</body>
+  </body>
 </html>

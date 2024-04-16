@@ -186,7 +186,8 @@ def add_to_watchlist(request, listing_id):
         return render(request, "auctions/watchlist.html", {
             "listings": request.user.liked.all()
         })
-    
+
+   
 def watchlist(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
