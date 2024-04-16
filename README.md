@@ -35,6 +35,17 @@ Projects from the course
       ![image](mail/mail/static/images/inbox.PNG) <br>
 ***
 ## Network
+- A social network website.
+  + _Handling User authentication_
+  + _Storing data using Sqlite_
+  + _Rendering with vanila javasript ^^_
+  + Users can:
+    + Register, Log in, Log out
+    + Post something
+    + Like/Dislike a post
+    + Follow/unfollow other users
+    
+
 ***
 ## Wiki
 ***
