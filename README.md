@@ -28,11 +28,11 @@ Projects from the course
   + _Rendering with vanila javasript ^^__
   + _Things user can do:_
         + Register, Log in, Log out
-         ![image]() <br>
+         ![image](mail/mail/static/images/auth.PNG) <br>
         + Send/receive emails
         + Archive emails
-        + Reply to emails
-         ![image]() <br>
+        + Reply to emails  
+         ![image](mail/mail/static/images/inbox.PNG) <br>
 ***
 ## Network
 ***
