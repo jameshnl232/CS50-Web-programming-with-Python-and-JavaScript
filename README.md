@@ -27,12 +27,12 @@ Projects from the course
   + _Storing data using Sqlite_
   + _Rendering with vanila javasript ^^__
   + _Things user can do:_
-        + Register, Log in, Log out
-         ![image](mail/mail/static/images/auth.PNG) <br>
-        + Send/receive emails
-        + Archive emails
-        + Reply to emails  
-         ![image](mail/mail/static/images/inbox.PNG) <br>
+    + Register, Log in, Log out
+      ![image](mail/mail/static/images/auth.PNG) <br>
+    + Send/receive emails
+    + Archive emails
+    + Reply to emails  
+      ![image](mail/mail/static/images/inbox.PNG) <br>
 ***
 ## Network
 ***
