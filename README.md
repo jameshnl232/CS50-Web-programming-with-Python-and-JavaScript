@@ -44,7 +44,7 @@ Projects from the course
     + Post something
     + Like/Dislike a post
     + Follow/unfollow other users
-    
+    ![image](network/network/static/images) <br>
 
 ***
 ## Wiki
